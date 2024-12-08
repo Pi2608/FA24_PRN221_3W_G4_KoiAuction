@@ -1,0 +1,46 @@
+# Ignore build and publish outputs
+bin/
+obj/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ASP.NET Core specific
+appsettings*.json
+!appsettings.json
+appsettings.Development.json
+appsettings.Local.json
+
+# Logs
+*.log
+
+# Dependency directories
+.vscode/
+.vs/
+
+# Environment files
+.env
+.env.*
+
+# IDE-specific
+.idea/
+*.iml
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Node Modules (if using front-end frameworks)
+node_modules/
+
+# Others
+*.db
+*.sqlite
+*.sqlite3

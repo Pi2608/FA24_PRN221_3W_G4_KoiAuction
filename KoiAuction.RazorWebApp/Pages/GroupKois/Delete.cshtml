@@ -1,0 +1,46 @@
+﻿@page
+@model KoiAuction.RazorWebApp.Pages.GroupKois.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GroupKoi</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Farm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Farm.Id)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GroupKoi.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

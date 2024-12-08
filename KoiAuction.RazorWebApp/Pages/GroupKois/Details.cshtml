@@ -1,0 +1,43 @@
+﻿@page
+@model KoiAuction.RazorWebApp.Pages.GroupKois.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GroupKoi</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Status)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GroupKoi.Farm)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GroupKoi.Farm.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.GroupKoi.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,73 @@
+﻿@page
+@model KoiAuction.RazorWebApp.Pages.KoiFarms.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>KoiFarm</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.FarmName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.FarmName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Password)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Password)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Location)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Location)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.OwnerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.OwnerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Phone)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.CreateDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.CreateDate)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Wallet)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Wallet)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.KoiFarm.Status)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KoiFarm.Status)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.KoiFarm.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
