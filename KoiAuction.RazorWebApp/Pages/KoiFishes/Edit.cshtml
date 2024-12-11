@@ -1,0 +1,82 @@
+﻿@page
+@model KoiAuction.RazorWebApp.Pages.KoiFishes.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>KoiFish</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="KoiFish.Id" />
+            <div class="form-group">
+                <label asp-for="KoiFish.Name" class="control-label"></label>
+                <input asp-for="KoiFish.Name" class="form-control" />
+                <span asp-validation-for="KoiFish.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Age" class="control-label"></label>
+                <input asp-for="KoiFish.Age" class="form-control" />
+                <span asp-validation-for="KoiFish.Age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.GroupKoiId" class="control-label"></label>
+                <select asp-for="KoiFish.GroupKoiId" class="form-control" asp-items="ViewBag.GroupKoiId"></select>
+                <span asp-validation-for="KoiFish.GroupKoiId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.FarmId" class="control-label"></label>
+                <select asp-for="KoiFish.FarmId" class="form-control" asp-items="ViewBag.FarmId"></select>
+                <span asp-validation-for="KoiFish.FarmId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Quantity" class="control-label"></label>
+                <input asp-for="KoiFish.Quantity" class="form-control" />
+                <span asp-validation-for="KoiFish.Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Description" class="control-label"></label>
+                <input asp-for="KoiFish.Description" class="form-control" />
+                <span asp-validation-for="KoiFish.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Status" class="control-label"></label>
+                <input asp-for="KoiFish.Status" class="form-control" />
+                <span asp-validation-for="KoiFish.Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KoiFish.Gender" class="control-label"></label>
+                <input asp-for="KoiFish.Gender" class="form-control" />
+                <span asp-validation-for="KoiFish.Gender" class="text-danger"></span>
+            </div>
+            @* <div class="form-group">
+            <label asp-for="KoiFish.CreateDate" class="control-label"></label>
+            <input asp-for="KoiFish.CreateDate" class="form-control" />
+            <span asp-validation-for="KoiFish.CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+            <label asp-for="KoiFish.UpdateDate" class="control-label"></label>
+            <input asp-for="KoiFish.UpdateDate" class="form-control" />
+            <span asp-validation-for="KoiFish.UpdateDate" class="text-danger"></span>
+            </div> *@
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
