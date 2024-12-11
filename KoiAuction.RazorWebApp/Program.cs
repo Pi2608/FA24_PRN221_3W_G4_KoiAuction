@@ -9,6 +9,8 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<FA24_PRN221_3W_G4_KoiAuctionContext>();
 builder.Services.AddScoped<KoiFarmService>();
 builder.Services.AddScoped<GroupKoiService>();
+builder.Services.AddScoped<UserService>();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -23,6 +25,8 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSession();
 
 app.UseRouting();
 
