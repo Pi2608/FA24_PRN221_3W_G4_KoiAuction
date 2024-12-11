@@ -46,9 +46,9 @@ namespace KoiAuction.Services
             return await _repository.RemoveAsync(koiFarm);
         }
 
-        public async Task<List<KoiFarm>> Search(string? email, string? farmName, string? location)
+        public async Task<List<KoiFarm>> Search(string? farmName, string? location, string? owner)
         {
-            return await _repository.Search(email, farmName, location);
+            return await _repository.Search(farmName, location, owner);
         }
     }
 }

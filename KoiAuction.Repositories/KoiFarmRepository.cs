@@ -11,14 +11,25 @@ namespace KoiAuction.Repositories
     {
         public KoiFarmRepository() { }
 
-        public async Task<List<KoiFarm>> Search(string? email, string? farmName, string? location)
+        public async Task<List<KoiFarm>> Search(string? farmName, string? location, string? owner)
         {
             var query = _context.KoiFarms.AsQueryable();
 
-            if (!string.IsNullOrEmpty(email) || !string.IsNullOrEmpty(farmName) || !string.IsNullOrEmpty(location))
+            if (!string.IsNullOrEmpty(farmName))
             {
-                query = query.Where(f => f.Email.Contains(email) || f.FarmName.Contains(farmName) || f.Location.Contains(location));
+                query = query.Where(f => f.FarmName.Contains(farmName));
             }
+
+            if (!string.IsNullOrEmpty(location))
+            {
+                query = query.Where(f => f.Location.Contains(location));
+            }
+
+            if (!string.IsNullOrEmpty(owner))
+            {
+                query = query.Where(f => f.OwnerName.Contains(owner));
+            }
+
             return query.ToList();
         }
     }

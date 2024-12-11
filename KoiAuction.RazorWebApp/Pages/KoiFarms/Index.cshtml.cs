@@ -27,24 +27,24 @@ namespace KoiAuction.RazorWebApp.Pages.KoiFarms
         //}
         [BindProperty]
         public IList<KoiFarm> KoiFarm { get;set; } = default!;
-        public string? Email { get; set; }
         public string? FarmName { get; set; }
         public string? Location { get; set; }
+        public string? Owner { get; set; }
 
         public int CurrentPage { get; set; }
         public int TotalPages { get; set; }
         public int PageSize { get; set; } = 2;
 
-        public async Task OnGetAsync(string? email, string? farmName, string? location, int pageNumber = 1)
+        public async Task OnGetAsync(string? farmName, string? location, string? owner, int pageNumber = 1)
         {
             List<KoiFarm> farms;
             List<KoiFarm> allFarms;
 
-            Email = email;
             FarmName = farmName;
             Location = location;
+            Owner = owner;
 
-            farms = await _farmService.Search(email, farmName, location);
+            farms = await _farmService.Search(farmName, location, owner);
             allFarms = await _farmService.GetAll();
 
             if (farms.Count > 0)
